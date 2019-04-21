@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-# import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 # DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-# ALLOWED_HOSTS = ['persianempire.herokuapp.com']
+ALLOWED_HOSTS = ['persiaempire.herokuapp.com']
 
 
 # Application definition
@@ -142,7 +142,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get ('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get ('EMAIL_PASS')
 
-# django_heroku.settings (locals())
+django_heroku.settings (locals())
 
 AWS_ACCESS_KEY_ID = os.environ.get ('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get ('AWS_SECRET_ACCESS_KEY')
