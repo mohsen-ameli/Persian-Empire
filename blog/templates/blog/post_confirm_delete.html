@@ -10,8 +10,8 @@
         {{ form|crispy }}
       </fieldset>
       <div class="form-group">
-        <button class="btn btn-outline-danger" type="submit">Yes, I do</button>
-        <a class="btn btn-outline-secondary" href="{% url 'post-detail' object.id %}">No, I don't</a>
+        <button class="btn btn-danger" type="submit">Yes, I do</button>
+        <a class="btn btn-default" href="{% url 'post-detail' object.id %}">No, I don't</a>
       </div>
     </form>
   </div>

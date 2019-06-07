@@ -3,10 +3,13 @@
 {% block content %}
   <div class="content-section">
     <div class="media">
-      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+      <div class="media-left media-middle">
+        <img class="img-circle account-img " src="{{ user.profile.image.url }}">
+      </div>
       <div class="media-body">
-        <h2 class="account-heading">{{ user.username }}</h2>
-        <p class="text-secondary">{{ user.email }}</p>
+        <br/>
+        <h2 class="media-heading"><strong> {{ user.username }} </strong></h2>
+        <p class="media-heading">{{ user.email }}</p>
       </div>
     </div>
     <form method="POST" enctype="multipart/form-data">
@@ -17,8 +20,9 @@
           {{ p_form|crispy }}
       </fieldset>
       <div class="form-group">
-          <button class="btn btn-outline-info" type="submit">Update</button>
+          <button class="btn btn-info" type="submit">Update</button>
       </div>
     </form>
   </div>
+  <br/>
 {% endblock content %}
