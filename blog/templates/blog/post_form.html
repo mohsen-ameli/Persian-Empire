@@ -2,21 +2,23 @@
 {% load crispy_forms_tags %}
 {% block content %}
   <div class="content-section">
-    <!-- TinyMCE -->
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
-    <script>
-
-    tinymce.init({
-      selector: "textarea",  // change this value according to your HTML
-      plugins: "image",
-      toolbar: "image",
-      image_uploadtab: false,
-      selector: 'textarea',  // change this value according to your HTML
-      plugins : 'advlist autolink link image lists charmap print preview'
-    });
-
-    </script>
-    <form method="POST">
+    <form method="POST" novalidate>
+      <!-- TinyMCE -->
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+      <script>
+        tinymce.init({
+        height: 500,
+        cleanup_on_startup: true,
+        custom_undo_redo_levels: 20,
+        selector: "textarea",  // change this value according to your HTML
+        toolbar1: "image fullscreen preview bold italic underline | fontselect fontsizeselect,  | forecolor backcolor | alignleft alignright | aligncenter alignjustify | indent outdent | bullist numlist table | | link image media | codesample |",
+        toolbar2: "visualblocks visualchars | charmap hr pagebreak nonbreaking anchor |  code |",
+        plugins: "save link image media preview codesample table code lists fullscreen  insertdatetime  nonbreaking  directionality searchreplace wordcount visualblocks visualchars code fullscreen autolink lists  charmap print  hr anchor pagebreak",
+        menubar: true,
+        statusbar: true,
+        imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
+        });
+      </script>
       {% csrf_token %}
       <fieldset class="form-group">
         <legend class="boarde-dutton mb-4">Blog Post</legend>
