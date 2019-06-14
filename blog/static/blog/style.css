@@ -9,6 +9,18 @@ body{
   font-family: 'Satisfy', cursive;
 }
 
+.title-font {
+  font-family: 'Indie Flower', cursive;
+}
+
+.content-font {
+  font-family: 'Merriweather', serif;
+}
+
 li {
   font-family: 'Courgette', cursive;
+}
+
+.name-font {
+  font-family: 'Satisfy', cursive;
 }

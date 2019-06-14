@@ -1,9 +1,10 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
 {% block content %}
   <article class="media content-section">
     <div class="media-body">
       <div class="article-metadata">
-        <a class="mr-2" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
+        <a class="mr-2 name-font" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
         <small class="text-muted">{{ object.release_date|date:"F d, Y" }}</small>
         {% if object.author == user %}
         <div>
@@ -12,8 +13,8 @@
         </div>
         {% endif %}
       </div>
-      <h2 class="article-title">{{ object.title }}</h2>
-      <p class="article-content">{{ object.content|safe }}</p>
+      <h2 class="article-title title-font">{{ object.title }}</h2>
+      <p class="article-content content-font">{{ object.content|safe }}</p>
     </div>
   </article>
 {% endblock content %}

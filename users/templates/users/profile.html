@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
 {% load crispy_forms_tags %}
 {% block content %}
   <div class="content-section">
@@ -8,7 +9,7 @@
       </div>
       <div class="media-body">
         <br/>
-        <h2 class="media-heading"><strong> {{ user.username }} </strong></h2>
+        <h2 class="media-heading name-font"><strong> {{ user.username }} </strong></h2>
         <p class="media-heading">{{ user.email }}</p>
       </div>
     </div>
