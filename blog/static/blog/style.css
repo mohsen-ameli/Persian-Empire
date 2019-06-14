@@ -1,4 +1,6 @@
-body{}
+body{
+  background-image: url("images/background.jpg");
+}
 
 .navbar-brand{
   font-family: 'Great Vibes', cursive;
