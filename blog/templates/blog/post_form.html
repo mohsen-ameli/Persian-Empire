@@ -1,6 +1,8 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+{% load staticfiles %}
 {% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
   <div class="content-section">
     <form method="POST" novalidate>
       <!-- TinyMCE -->
