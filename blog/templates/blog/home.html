@@ -14,13 +14,13 @@
       <div class="card-body">
         <div class="row no-gutters">
           <div class="media-left">
-            <img class="rounded-circle account-img" width="80" height="80" style="margin-right: 15px" src="{{ post.author.profile.image.url }}">
+            <img class="rounded-circle account-img" width="60" height="60" style="margin-right: 15px" src="{{ post.author.profile.image.url }}">
           </div>
           <div class="media-body">
             <div class="media-heading">
               <a class="mr-2 name-font" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
               <small class="text-muted">{{ post.release_date|date:"F d, Y" }}</small>
-              <a href="{% url 'post-detail' post.id %}" style="margin-left: 300px">Details Of This Post</a>
+              <a href="{% url 'post-detail' post.id %}" style="margin-left: 250px">Details Of This Post</a>
               <hr/>
             </div>
             <h3 class="title-font"><strong>{{ post.title }}</strong></h3>
