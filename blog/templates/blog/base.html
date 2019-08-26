@@ -1,72 +1,83 @@
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
-  <head>
-    {% load staticfiles %}
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- golden link -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"><link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    
-    <!-- Items Font -->
-    <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
-    {% if title %}
-      <title>My Blog - {{ title }}</title>
-    {% else %}
-      <title>Mohsen's blog</title>
-    {% endif %}
-  </head>
-  <body>
+<head>
+  {% load staticfiles %}
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% include 'blog/navbar.html' %}
-    <br/>
+  <!-- golden link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <main role="main" class="container">
+  <!-- Items Font -->
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/main.css' %}">
+
+  <!-- Logo Font -->
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Pacifico|Satisfy" rel="stylesheet">
+
+
+  {% if title %}
+  <title>My Blog - {{ title }}</title>
+  {% else %}
+  <title>Mohsen's blog</title>
+  {% endif %}
+
+</head>
+
+<body>
+
+  {% include 'blog/navbar.html' %}
+  <br />
+
+  <main role="main" class="container">
     <div class="row">
-    <div class="col-md-8">
-      
-      {% if messages %}
-        {% for message in messages %}
-           <div class="alert alert-{{ message.tags }}">
-             {{ message }}
-           </div>
-        {% endfor %}
-      {% endif %}
-      {% block content %}{% endblock %}
+      <div class="col-md-8">
 
-    </div>
-    <!-- Side Bar -->
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-body">
-          <h4>Our Sidebar</h4>
-          <p class='text-muted'>You can put any information here you'd like.
-            <ul class="list-group">
-              <li class="list-group-item list-group-item-light">Latest Posts</li>
-              <li class="list-group-item list-group-item-light">Announcements</li>
-              <li class="list-group-item list-group-item-light">Calendars</li>
-              <li class="list-group-item list-group-item-light">etc</li>
-            </ul>
-          </p>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+
+      </div>
+      <!-- Side Bar -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h4>Our Sidebar</h4>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    </main>
+  </main>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
