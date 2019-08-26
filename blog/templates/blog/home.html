@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+{% block content %}
+  <!-- Title -->
+  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+  <!-- content -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+  <!-- Name Font -->
+  <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+  <!-- CSS Loading -->
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+  {% for post in posts %}
+    <div class="card">
+      <div class="card-body">
+        <div class="row no-gutters">
+          <div class="media-left">
+            <img class="rounded-circle account-img" width="60" height="60" style="margin-right: 15px" src="{{ post.author.profile.image.url }}">
+          </div>
+          <div class="media-body">
+            <div class="media-heading">
+              <a class="mr-2 name-font" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.release_date|date:"F d, Y" }}</small>
+              <a href="{% url 'post-detail' post.id %}" style="margin-left: 250px">Details Of This Post</a>
+              <hr/>
+            </div>
+            <h3 class="title-font"><strong>{{ post.title }}</strong></h3>
+            <p class="article-content content-font">{{ post.content|safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+  {% endfor %}
+
+  {% if is_paginated %}
+
+    {% if page_obj.has_previous %}
+      <a class="btn btn-outline-primary mb-4" href="?page=1">First</a>
+      <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if page_obj.number == num %}
+        <a class="btn btn-outline-primary mb-4" href="?page={{ num }}">{{ num }}</a>
+      {% elif num > page_obj.number|add:"-3" and num < page_obj.number|add:"3" %}
+        <a class="btn btn-outline-primary mb-4" href="?page={{ num }}">{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+      <a class="btn btn-outline-primary mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+    {% endif %}
+    <div>
+      <br/>
+    </div>
+  {% endif %}
+{% endblock content %}

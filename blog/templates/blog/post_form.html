@@ -1,0 +1,39 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+  <div class="content-section">
+    <div class="card">
+      <form method="POST" novalidate>{% csrf_token %}
+        <!-- TinyMCE -->
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <script>
+          tinymce.init({
+          height: 500,
+          cleanup_on_startup: true,
+          custom_undo_redo_levels: 20,
+          selector: "textarea",  // change this value according to your HTML
+          toolbar1: "image fullscreen preview bold italic underline | fontselect fontsizeselect,  | forecolor backcolor | alignleft alignright | aligncenter alignjustify | indent outdent | bullist numlist table | | link image media | codesample |",
+          toolbar2: "visualblocks visualchars | charmap hr pagebreak nonbreaking anchor |  code |",
+          plugins: "save link image media preview codesample table code lists fullscreen  insertdatetime  nonbreaking  directionality searchreplace wordcount visualblocks visualchars code fullscreen autolink lists  charmap print  hr anchor pagebreak",
+          menubar: true,
+          statusbar: true,
+          imagetools_toolbar: "rotateleft rotateright | flipv fliph | editimage imageoptions"
+          });
+        </script>
+        <div class="card-body">
+          <fieldset class="form-group">
+            <h4 class="boarde-dutton mb-4">Blog Post</h4>
+            <hr/>
+            {{ form|crispy }}
+          </fieldset>
+          <div class="form-group">
+            <button class="btn btn-outline-success" type="submit">Post !</button>
+          </div>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,31 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+{% block content %}
+  <!-- Title -->
+  <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+  <!-- content -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+  <!-- Name Font -->
+  <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+  <!-- CSS Loading -->
+  <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+
+  <div class="card">
+    <div class="card-body">
+      <div class="article-metadata">
+        <a class="mr-2 name-font" href="{% url 'user-post' object.author.username %}">{{ object.author }}</a>
+        <small class="text-muted">{{ object.release_date|date:"F d, Y" }}</small>
+      </div>
+      <hr/>
+      <h2 class="article-title title-font"><strong>{{ object.title }}</strong></h2>
+      <p class="article-content content-font">{{ object.content|safe }}</p>
+      <br/>
+      {% if object.author == user %}
+      <div>
+        <a class="btn btn-outline-info" href="{% url 'update-post' object.id %}">Update</a>
+        <a class="btn btn-outline-danger" href="{% url 'delete-post' object.id %}">Delete</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+body{
+  background-image: url("images/background.jpg");
+}
+
+.navbar-brand{
+  font-family: 'Great Vibes', cursive;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Satisfy', cursive;
+}
+
+.title-font {
+  font-family: 'Cinzel', serif;
+}
+
+.content-font {
+  font-family: 'Merriweather', serif;
+}
+
+.nav-items {
+  font-family: 'Courgette', cursive;
+}
+
+.name-font {
+  font-family: 'Satisfy', cursive;
+}
