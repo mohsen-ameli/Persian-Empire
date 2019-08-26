@@ -3,21 +3,25 @@
 {% load staticfiles %}
 {% block content %}
   <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-  <div class="content-section">
-    <form method="POST">
-      {% csrf_token %}
-      <fieldset class="form-group">
-        <legend class="boarde-dutton mb-4">Why not join now ?!</legend>
-        {{ form|crispy }}
-      </fieldset>
-      <div class="form-group">
-        <button class="btn btn-info" type="submit">Sign Up</button>
+
+  <div class="card">
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <h4 class="font-weight-normal">Why not join now ?!</h4>
+          <hr/>
+          {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+      </form>
+      <div class="boarder-top pt-3">
+        <small class="text-muted">
+          Already Have An Acount ? <a class="ml-2" href="{% url 'login' %}">Log In</a>
+        </small>
       </div>
-    </form>
-    <div class="boarder-top pt-3">
-      <small class="text-muted">
-        Already Have An Acount ? <a class="ml-2"href="{% url 'login' %}">Log In</a>
-      </small>
     </div>
   </div>
 {% endblock content %}

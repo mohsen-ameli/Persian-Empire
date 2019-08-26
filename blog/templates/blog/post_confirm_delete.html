@@ -3,18 +3,21 @@
 {% load staticfiles %}
 {% block content %}
   <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-  <div class="content-section">
-    <form method="POST">
-      {% csrf_token %}
-      <fieldset class="form-group">
-        <legend class="boarde-dutton mb-4">Deleting Posts</legend>
-        <h2>Are you sure that you want to delete this post? "{{ object.title }}"</h2>
-        {{ form|crispy }}
-      </fieldset>
-      <div class="form-group">
-        <button class="btn btn-danger" type="submit">Yes, I do</button>
-        <a class="btn btn-primary" href="{% url 'post-detail' object.id %}">No, I don't</a>
-      </div>
-    </form>
+
+  <div class="card">
+    <div class="card-body">
+      <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+          <h3>Are you sure that you want to delete this post?</h3>
+          <h3>"{{ object.title }}"</h3>
+          {{ form|crispy }}
+        </fieldset>
+        <div class="form-group">
+          <button class="btn btn-outline-danger" type="submit">Yes, I do</button>
+          <a class="btn btn-outline-primary" href="{% url 'post-detail' object.id %}">No, I don't</a>
+        </div>
+      </form>
+    </div>
   </div>
 {% endblock content %}

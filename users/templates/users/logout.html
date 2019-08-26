@@ -2,10 +2,16 @@
 {% load staticfiles %}
 {% block content %}
   <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-  <h3>You've ebeen logged out succesfully!</h3>
-    <div class="boarder-top pt-3">
-      <small class="text-muted">
-        <a href="{% url 'login' %}">Log In Again</a>
-      </small>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h3>You've been logged out succesfully!</h3>
+      </div>
+      <div class="boarder-top pt-3">
+        <small class="text-muted">
+          <a href="{% url 'login' %}" class="btn btn-outline-info">Log In Again</a>
+        </small>
+      </div>
     </div>
+  </div>
 {% endblock content %}

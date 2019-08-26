@@ -3,18 +3,24 @@
 {% block content %}
   <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-  <h1 class="mb-3">Post by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+
+  <h2 class="mb-3">All Posts By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h2>
   {% for post in posts %}
-    <article class="media content-section">
-      <div class="media-body">
+    <div class="card">
+      <div class="card-body">
         <div class="article-metadata">
-          <a class="mr-2 name-font" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
           <small class="text-muted">{{ post.release_date|date:"F d, Y" }}</small>
         </div>
-        <h2 class="title-font"><a class="article-title" href="{% url 'post-detail' post.id%}"><strong>{{ post.title }}</strong></a></h2>
+        <hr/>
+        <h2 class="title-font">
+          <a class="article-title"href="{% url 'post-detail' post.id%}" style="color: black">
+            <strong>{{ post.title }}</strong>
+          </a>
+        </h2>
         <p class="article-content content-font">{{ post.content|safe }}</p>
       </div>
-    </article>
+    </div>
+    <br/>
   {% endfor %}
 
   {% if is_paginated %}
