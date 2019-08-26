@@ -1,78 +1,77 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
+<header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
 
-        <!-- Logo -->
-        <a class="navbar-brand logo" href="/">Persian Empire</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <!-- Logo -->
+            <a class="navbar-brand logo" href="/">Persian Empire</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">
-                        <span class="fa fa-home"></span>&nbsp; Home
-                    </a>
-                </li>
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <span class="fa fa-home"></span>&nbsp; Home
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="websites" role="button" data-toggle="dropdown">
+                            <span class="fas fa-crown" aria-hidden="true"></span>&nbsp; My websites
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="websites">
+                            <a class="dropdown-item" href="https://mohsenmusic.herokuapp.com/">Mohsen Music</a>
+                            <a class="dropdown-item" href="https://mohsenweb.herokuapp.com/">Mohsen Web</a>
+                        </div>
+                    </li>
+                    
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/post/new/">
+                            <span class="fas fa-feather"></span>&nbsp; Post
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">
+                            <span class="fas fa-user"></span>&nbsp; {{ user }}'s Profile
+                        </a>
+                    </li>
                 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="websites" role="button" data-toggle="dropdown">
-                        <span class="fas fa-crown" aria-hidden="true"></span>&nbsp; My websites
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="websites">
-                        <a class="dropdown-item" href="https://mohsenmusic.herokuapp.com/">Mohsen Music</a>
-                        <a class="dropdown-item" href="https://mohsenweb.herokuapp.com/">Mohsen Web</a>
-                    </div>
-                </li>
+                    <li class="nav-item-right">
+                        <a class="nav-link" href="/logout">
+                            <span class="fa fa-sign-out"></span>&nbsp; Log Out
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item-right">
+                        <a class="nav-link" href="/login">
+                            <span class="fa fa-sign-in"></span>&nbsp; Log In
+                        </a>
+                    </li>
                 
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/post/new/">
-                        <span class="fas fa-feather"></span>&nbsp; Post
-                    </a>
-                </li>
-                {% endif %}
-            </ul>
+                    <li class="nav-item-right">
+                        <a class="nav-link" href="/register">
+                            <span class="fa fa-user-plus"></span>&nbsp; Sign Up
+                        </a>
+                    </li>
+                    {% endif %}
+                
+                
+                </ul>
 
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav">
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/profile">
-                        <span class="fas fa-user"></span>&nbsp; {{ user }}'s Profile
-                    </a>
-                </li>
-            
-                <li class="nav-item-right">
-                    <a class="nav-link" href="/logout">
-                        <span class="fa fa-sign-out"></span>&nbsp; Log Out
-                    </a>
-                </li>
-                {% else %}
-                <li class="nav-item-right">
-                    <a class="nav-link" href="/login">
-                        <span class="fa fa-sign-in"></span>&nbsp; Log In
-                    </a>
-                </li>
-            
-                <li class="nav-item-right">
-                    <a class="nav-link" href="/register">
-                        <span class="fa fa-user-plus"></span>&nbsp; Sign Up
-                    </a>
-                </li>
-                {% endif %}
-            
-            
-            </ul>
-
+            </div>
         </div>
-    </div>
 
-</nav>
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/5f5fa5bcd8.js"></script>
+    </nav>
+</header>
