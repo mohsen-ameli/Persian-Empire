@@ -20,7 +20,7 @@
             <div class="media-heading">
               <a class="mr-2 name-font" href="{% url 'user-post' post.author.username %}">{{ post.author }}</a>
               <small class="text-muted">{{ post.release_date|date:"F d, Y" }}</small>
-              <a href="{% url 'post-detail' post.id %}" style="margin-left: 250px">Details Of This Post</a>
+              <a href="{% url 'post-detail' post.id %}" style="margin-left: 225px">Details Of This Post</a>
               <hr/>
             </div>
             <h3 class="title-font"><strong>{{ post.title }}</strong></h3>
