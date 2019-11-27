@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+body {
+    overflow-x: hidden;
+}
+.padding {
+    padding: 1rem;
+}
+#cursive{
+    font-family: 'Dancing Script', cursive;
+}
+.navbar {
+    padding: .8 rem;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+}
+.carousel-caption{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.carousel-caption h2{
+    font-size: 500%;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+.carousel-caption .btn {
+    margin-top: 1.5rem;
+}
+/* First Button */
+.hex1{
+    border: 2px solid #000000;
+    /* margin-bottom: 3rem; */
+}
+.hex1:hover{
+    background-color: #4e4e68;
+    border: 2px solid #4e4e68;
+}
+/* Second Button */
+.hex2{
+    border: 2px solid #c29637;
+    /* margin-bottom: 3rem; */
+}
+.hex2:hover{
+    background-color: rgb(136, 101, 27);
+    border: 2px solid rgb(136, 101, 27);
+}
+/* Third Button */
+.hex3{
+    border: 2px solid #3e3ec6;
+    /* margin-bottom: 3rem; */
+}
+.hex3:hover{
+    background-color: #2c2c75;
+    border: 2px solid #2c2c75;
+}
+/*  */
+.jumbotron{
+    padding: 1.5rem;
+}
+.jumbotron a{
+    margin-top: 1rem;
+}
+
+.img-fluid {
+    border-radius: 5%;
+}
+
+/*-- Fixed Background --*/
+.fixed {
+    background-image: url(../../../media/Bootstrap_img/fixed.jpg);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/*-- Fixed Background --*/
+
+
+.fa-500px{
+    color: rgb(17, 80, 163);
+}
+.fa-bomb{
+    color: rgb(163, 33, 33);
+}
+.fa-cloud-sun-rain{
+    color: rgb(16, 138, 22);
+}
+.fa-500px, .fa-bomb, .fa-cloud-sun-rain{
+    font-size: 5rem;
+}
+/*  */
+.fa-facebook-square {
+    color: #3b5998;
+}
+.fa-youtube {
+    color: #bb0000;
+}
+.fa-instagram {
+    color: #517fa4;
+}
+.fa-twitter {
+    color: #00aced;
+}
+.social a {
+    font-size: 4em;
+    padding: 1rem;
+    padding-left: 5rem;
+}
+.fa-facebook-square:hover ,.fa-youtube:hover ,.fa-instagram:hover , .fa-twitter:hover {
+    color: #c5c5c5;
+}
+/*  */
+#welcome-icon{
+    border-top: 1.5px solid rgb(190, 190, 190);
+    width: 90%;
+}
+hr {
+    width: 95%;
+}
+
+footer {
+    background-color: rgb(63, 63, 63) ;
+    color: rgb(185, 185, 185);
+    padding: 1.5rem;
+}
+.dark-first {
+    border-top: 1.5px solid rgb(28, 28, 28);
+    width: 100%;
+}
+.contact-hr {
+width: 60%;
+border-top: 2px solid rgb(190, 190, 190);
+}
+
+/* LG */
+@media (max-width: 992px) {
+.carousel-caption{
+    top: 40%;
+}
+.carousel-caption h2{
+    font-size: 500%;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+.carousel-caption .btn {
+    font-size: 1rem;
+    margin-top: .75rem;
+}
+.social a {
+    font-size: 4em;
+}
+}
+
+/* MD */
+@media (max-width: 768px) {
+.carousel-caption{
+    top: 30%;
+}
+.carousel-caption h2{
+    font-size: 350%;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+.carousel-caption .btn {
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+.social a {
+    font-size: 3em;
+    padding: 1rem;
+    padding-left: 3rem;
+}
+}
+
+/* SM */
+@media (max-width: 576px) {
+.carousel-caption{
+    top: 25%;
+}
+.carousel-caption h2{
+    font-size: 300%;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+}
+.carousel-caption .btn {
+    font-size: .8rem;
+}
+.social a {
+    font-size: 3em;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+}

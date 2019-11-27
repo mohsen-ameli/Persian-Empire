@@ -16,7 +16,6 @@ def Home(Request):
 	}
 	return render(Request, 'blog/home.html', context)
 
-
 class PostListView(ListView):
 	model = Post
 	template_name = 'blog/home.html'
@@ -75,3 +74,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def About(Request):
 	return render(Request, 'blog/about.html', {'title': 'About'})
+
+def bootstrap(Request):
+	return render(Request, 'blog/bootstrap.html', {})
+
+def nuno(Request):
+	return render(Request, 'blog/Nuno.html', {})
