@@ -62,17 +62,18 @@ body {
 .jumbotron a{
     margin-top: 1rem;
 }
-
 .img-fluid {
     border-radius: 5%;
 }
 
 /*-- Fixed Background --*/
 .fixed {
-    background-image: url(../../../media/Bootstrap_img/fixed.jpg);
+    background-image: url(../../../media/Bootstrap_img/fixed.png);
     width: 100%;
-    height: 100%;
+    height: 820px;
     z-index: -1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 /*-- Fixed Background --*/
 
