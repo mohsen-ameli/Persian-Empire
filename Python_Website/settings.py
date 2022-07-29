@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
+import json
+
+with open('/etc/config1.json') as config_json:
+    config = json.load(config_json)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -141,8 +145,8 @@ EMAIL_HOST_PASSWORD = os.environ.get ('EMAIL_PASS')
 
 django_heroku.settings (locals())
 
-AWS_ACCESS_KEY_ID = os.environ.get ('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.environ.get ('AWS_SECRET_ACCESS_KEY')
+AWS_ACCESS_KEY_ID = config.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_ACCESS_KEY = config.get("AWS_SECRET_ACCESS_KEY")
 AWS_STORAGE_BUCKET_NAME = 'mohsen-persian-empire' #os.environ.get ('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_FILE_OVERWRITE = False
@@ -150,4 +154,4 @@ AWS_DEFAULT_ACL = None
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'us-east-2'
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
